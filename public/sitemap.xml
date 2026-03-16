@@ -25,6 +25,8 @@
   </url><url>
     <loc>http://localhost:1313/tres-gatos/contacto/</loc>
   </url><url>
+    <loc>http://localhost:1313/tres-gatos/posts/prueba/</loc>
+  </url><url>
     <loc>http://localhost:1313/tres-gatos/autores/</loc>
   </url><url>
     <loc>http://localhost:1313/tres-gatos/autores/deiby/</loc>
