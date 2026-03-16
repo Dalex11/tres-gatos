@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://dalex11.github.io/tres-gatos/"
 languageCode = "es"
 title = "Tres Gatos"
 theme = "PaperMod"
@@ -15,8 +15,6 @@ ShowPostNavLinks = true
 ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowToc = true
-relativeURLs = true
-canonifyURLs = true
 
 [params.homeInfoParams]
 Title = "Tres Gatos"

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tres Gatos</title>
+    <link>http://localhost:1313/tres-gatos/</link>
+    <description>Recent content on Tres Gatos</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 16 Mar 2026 17:39:28 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tres-gatos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Primera noticia1</title>
+      <link>http://localhost:1313/tres-gatos/posts/primera-noticia/</link>
+      <pubDate>Mon, 16 Mar 2026 17:39:28 -0500</pubDate>
+      <guid>http://localhost:1313/tres-gatos/posts/primera-noticia/</guid>
+      <description>&lt;p&gt;Este es el contenido de la noticia.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Primera noticia2</title>
+      <link>http://localhost:1313/tres-gatos/posts/prueba/</link>
+      <pubDate>Mon, 16 Mar 2026 17:39:28 -0500</pubDate>
+      <guid>http://localhost:1313/tres-gatos/posts/prueba/</guid>
+      <description>&lt;p&gt;Este es el contenido de la noticia.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Primera noticia3</title>
+      <link>http://localhost:1313/tres-gatos/posts/prueba1/</link>
+      <pubDate>Mon, 16 Mar 2026 17:39:28 -0500</pubDate>
+      <guid>http://localhost:1313/tres-gatos/posts/prueba1/</guid>
+      <description>&lt;p&gt;Este es el contenido de la noticia.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Primera noticia4</title>
+      <link>http://localhost:1313/tres-gatos/posts/prueba2/</link>
+      <pubDate>Mon, 16 Mar 2026 17:39:28 -0500</pubDate>
+      <guid>http://localhost:1313/tres-gatos/posts/prueba2/</guid>
+      <description>&lt;p&gt;Este es el contenido de la noticia.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/tres-gatos/contacto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tres-gatos/contacto/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    <item>
+      <title>Deiby Rodriguez</title>
+      <link>http://localhost:1313/tres-gatos/autores/deiby/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tres-gatos/autores/deiby/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

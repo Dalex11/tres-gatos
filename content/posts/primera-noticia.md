@@ -1,6 +1,6 @@
 ---
-title: "Primera noticia"
-date: 2026-03-16
+title: "Primera noticia1"
+date: "2026-03-16T17:39:28-05:00"
 draft: false
 tags: ["tecnologia"]
 categories: ["noticias"]
