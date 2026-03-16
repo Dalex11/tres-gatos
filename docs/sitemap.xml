@@ -2,25 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://TUUSUARIO.github.io/categories/</loc>
+    <loc>https://dalex11.github.io/tres-gatos/categories/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://TUUSUARIO.github.io/categories/noticias/</loc>
+    <loc>https://dalex11.github.io/tres-gatos/categories/noticias/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://TUUSUARIO.github.io/posts/</loc>
+    <loc>https://dalex11.github.io/tres-gatos/posts/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://TUUSUARIO.github.io/posts/primera-noticia/</loc>
+    <loc>https://dalex11.github.io/tres-gatos/posts/primera-noticia/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://TUUSUARIO.github.io/tags/</loc>
+    <loc>https://dalex11.github.io/tres-gatos/tags/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://TUUSUARIO.github.io/tags/tecnologia/</loc>
+    <loc>https://dalex11.github.io/tres-gatos/tags/tecnologia/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://TUUSUARIO.github.io/</loc>
+    <loc>https://dalex11.github.io/tres-gatos/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dalex11.github.io/tres-gatos/contacto/</loc>
+  </url><url>
+    <loc>https://dalex11.github.io/tres-gatos/autores/</loc>
+  </url><url>
+    <loc>https://dalex11.github.io/tres-gatos/autores/deiby/</loc>
   </url>
 </urlset>

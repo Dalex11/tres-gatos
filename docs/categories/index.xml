@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Tres Gatos</title>
-    <link>https://TUUSUARIO.github.io/categories/</link>
+    <link>https://dalex11.github.io/tres-gatos/categories/</link>
     <description>Recent content in Categories on Tres Gatos</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://TUUSUARIO.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dalex11.github.io/tres-gatos/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Noticias</title>
-      <link>https://TUUSUARIO.github.io/categories/noticias/</link>
+      <link>https://dalex11.github.io/tres-gatos/categories/noticias/</link>
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://TUUSUARIO.github.io/categories/noticias/</guid>
+      <guid>https://dalex11.github.io/tres-gatos/categories/noticias/</guid>
       <description></description>
     </item>
   </channel>
