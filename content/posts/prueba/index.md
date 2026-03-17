@@ -7,6 +7,8 @@ categories: ["noticias"]
 author: "Deiby Rodriguez"
 cover:
   image: "![imagen](imagen1.jpg)"
+  alt: "Imagen principal"
+  relative: true
 ---
 
 Este es el contenido de la noticia.
