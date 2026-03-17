@@ -6,7 +6,7 @@ tags: ["tecnologia"]
 categories: ["noticias"]
 author: "Deiby Rodriguez"
 cover:
-  image: "/images/imagen1.png"
+  image: "./imagen1.png"
   alt: "Imagen principal"
   relative: true
 ---
