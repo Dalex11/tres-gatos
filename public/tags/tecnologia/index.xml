@@ -9,31 +9,10 @@
     <lastBuildDate>Mon, 16 Mar 2026 17:39:28 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tres-gatos/tags/tecnologia/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Primera noticia1</title>
-      <link>http://localhost:1313/tres-gatos/posts/primera-noticia/</link>
-      <pubDate>Mon, 16 Mar 2026 17:39:28 -0500</pubDate>
-      <guid>http://localhost:1313/tres-gatos/posts/primera-noticia/</guid>
-      <description>&lt;p&gt;Este es el contenido de la noticia.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Primera noticia2</title>
+      <title>Primera noticia</title>
       <link>http://localhost:1313/tres-gatos/posts/prueba/</link>
       <pubDate>Mon, 16 Mar 2026 17:39:28 -0500</pubDate>
       <guid>http://localhost:1313/tres-gatos/posts/prueba/</guid>
-      <description>&lt;p&gt;Este es el contenido de la noticia.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Primera noticia3</title>
-      <link>http://localhost:1313/tres-gatos/posts/prueba1/</link>
-      <pubDate>Mon, 16 Mar 2026 17:39:28 -0500</pubDate>
-      <guid>http://localhost:1313/tres-gatos/posts/prueba1/</guid>
-      <description>&lt;p&gt;Este es el contenido de la noticia.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Primera noticia4</title>
-      <link>http://localhost:1313/tres-gatos/posts/prueba2/</link>
-      <pubDate>Mon, 16 Mar 2026 17:39:28 -0500</pubDate>
-      <guid>http://localhost:1313/tres-gatos/posts/prueba2/</guid>
       <description>&lt;p&gt;Este es el contenido de la noticia.&lt;/p&gt;</description>
     </item>
   </channel>
