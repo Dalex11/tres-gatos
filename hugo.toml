@@ -18,8 +18,8 @@ ShowToc = true
 
 [params.homeInfoParams]
 Title = "Tres Gatos"
-Content = "Noticias, análisis y reportajes."
+Content = "Noticias, análisis y reportajes. "
 
 [[params.socialIcons]]
-name = "instagram"
-url = "https://www.instagram.com/personnofound/"
+name = "github"
+url = "https://github.com/dalex11"
