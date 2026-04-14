@@ -3,8 +3,20 @@ languageCode = "es"
 title = "Tres Gatos"
 theme = "PaperMod"
 
+mainSections = ["posts"]
+
 [pagination]
 pagerSize = 10
+
+[[menu.main]]
+name = "Contáctanos"
+url = "/contacto/"
+weight = 10
+
+[[menu.main]]
+name = "Acerca de nosotros"
+url = "/acerca-de-nosotros/"
+weight = 20
 
 [params]
 
@@ -15,11 +27,24 @@ ShowPostNavLinks = true
 ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowToc = true
+DateFormat = "02 Jan 2006 15:04"
 
 [params.homeInfoParams]
 Title = "Tres Gatos"
 Content = "Noticias, análisis y reportajes."
 
 [[params.socialIcons]]
-name = "github"
-url = "https://github.com/dalex11"
+name = "instagram"
+url = "https://instagram.com/"
+
+[[params.socialIcons]]
+name = "x"
+url = "https://x.com/"
+
+[[params.socialIcons]]
+name = "youtube"
+url = "https://youtube.com/"
+
+[[params.socialIcons]]
+name = "facebook"
+url = "https://facebook.com/"

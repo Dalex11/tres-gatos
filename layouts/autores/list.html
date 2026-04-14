@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="hero-card">
+  <div class="hero-card__row">
+    <div class="hero-card__text">
+      <h1 class="hero-card__title">Autores</h1>
+      <p class="hero-card__description">Conoce a las personas detrás de las noticias.</p>
+    </div>
+  </div>
+</section>
+
+<section class="author-list">
+  <div class="author-grid">
+    {{- range sort (where .Site.RegularPages "Section" "autores") ".Title" -}}
+    <a class="author-card" href="{{ .Permalink }}">
+      <div class="author-card__thumb">
+        {{- if .Params.photo }}
+        <img src="{{ .Params.photo | relURL }}" alt="{{ .Title }}">
+        {{- else }}
+        <span>{{ .Title | first 1 }}</span>
+        {{- end }}
+      </div>
+      <div class="author-card__info">
+        <h3>{{ .Title }}</h3>
+        {{- if .Params.bio -}}
+        <p>{{ .Params.bio }}</p>
+        {{- end -}}
+      </div>
+    </a>
+    {{- end -}}
+  </div>
+</section>
+{{ end }}

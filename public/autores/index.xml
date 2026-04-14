@@ -12,7 +12,14 @@
       <link>http://localhost:1313/tres-gatos/autores/deiby/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tres-gatos/autores/deiby/</guid>
-      <description></description>
+      <description>&lt;p&gt;Ingeniero de Sistemas&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Santiago Rodriguez</title>
+      <link>http://localhost:1313/tres-gatos/autores/santiago/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tres-gatos/autores/santiago/</guid>
+      <description>&lt;p&gt;Licenciado en filosofía&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

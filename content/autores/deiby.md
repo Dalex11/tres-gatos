@@ -1,4 +1,7 @@
 ---
 title: "Deiby Rodriguez"
-bio: "Estudiante de Ingeniería de Sistemas"
+bio: "Ingeniero de Sistemas"
+photo: "images/authors/deiby.png"
 ---
+
+Ingeniero de Sistemas

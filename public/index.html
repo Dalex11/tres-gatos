@@ -66,58 +66,99 @@
             </div>
         </div>
         <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/tres-gatos/contacto/" title="Contáctanos">
+                    <span>Contáctanos</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tres-gatos/acerca-de-nosotros/" title="Acerca de nosotros">
+                    <span>Acerca de nosotros</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<article class="first-entry home-info">
-    <header class="entry-header">
-        <h1>Tres Gatos</h1>
-    </header>
-    <div class="entry-content">
-        Noticias, análisis y reportajes.
+<main class="main">
+<link rel="stylesheet" href="/tres-gatos/css/homepage.css">
+<section class="hero-card">
+  <div class="hero-card__row">
+    <div class="hero-card__text">
+      <h1 class="hero-card__title">Tres Gatos</h1>
+      <p class="hero-card__description">No es mucho pero es nuestro.</p>
     </div>
-    <footer class="entry-footer">
-        <div class="social-icons" >
-    <a href="https://github.com/dalex11" target="_blank" rel="noopener noreferrer me"
-        title="Github">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-    </a>
-</div>
-
-    </footer>
-</article>
-
-<article class="post-entry"> 
-<figure class="entry-cover">
-            <img loading="lazy" src="http://localhost:1313/tres-gatos/posts/prueba/imagen1.png" alt="Imagen principal">
-</figure>
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Primera noticia
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Este es el contenido de la noticia.
-</p>
+    <button id="authorModalButton" class="button button--icon" aria-label="Ver autores">
+      <span>👤</span>
+    </button>
   </div>
-  <footer class="entry-footer"><span title='2026-03-16 17:39:28 -0500 -05'>March 16, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Deiby Rodriguez</span></footer>
-  <a class="entry-link" aria-label="post link to Primera noticia" href="http://localhost:1313/tres-gatos/posts/prueba/"></a>
-</article>
+</section>
+
+<section class="filters-card">
+  <div class="filters-card__header">
+    <h2>Explorar noticias</h2>
+    <button id="sortToggleButton" class="button button--secondary" data-order="desc">Ordenar: más recientes</button>
+  </div>
+  <div class="filters-card__body">
+    <div class="search-shell search-shell--compact">
+      <input id="newsSearch" type="search" placeholder="Buscar título, etiqueta o autor" autocomplete="off">
+    </div>
+  </div>
+</section>
+
+<section class="news-list" id="newsList"><article class="news-card" data-title="la ia ¿futuro o perdición?" data-author="santiago rodriguez" data-category="opinión" data-tags="ia tecnología opinión" data-date="2026-04-13T20:24:52-05:00">
+    <div class="news-card__image" style="background-image:url('/tres-gatos/posts/ia-futuro-o-perdicion/imagen1.png')"></div>
+    <div class="news-card__body">
+      <div class="news-card__meta">
+        <span class="news-card__tag">Opinión</span>
+        <span>13 Apr 2026</span>
+      </div>
+      <h2>La IA ¿futuro o perdición?</h2>
+      <p>Lic. Santiago Arturo Rodríguez Bustos
+Una polémica se ha desatado y tiene como principal foco a las Inteligencias Artificiales (IA). Su desarrollo ha mejorado exponencialmente su capacidad para la generación de imágenes, de textos y de predicción de resultados. Por eso no es raro ver en tendencia imágenes creadas con IA inspiradas en estilos de animación populares, artículos escritos por ellas e incluso su implementación en la guerra.
+Las IA cada día demuestran su amplio potencial. Pero, su desarrollo sin límites significa un riesgo, tanto ecológico como social. Es bien sabido que esta tecnología utiliza amplios recursos naturales para refrigerar sus servidores, han sido utilizadas para manipulación de noticias e incluso hace parte de dispositivos militares.
+</p>
+      <div class="news-card__footer">
+        <div>
+          <a class="news-card__author" href="http://localhost:1313/tres-gatos/autores/santiago/">Santiago Rodriguez</a>
+        </div>
+        <div class="news-card__tags"><span>IA</span><span>Tecnología</span><span>Opinión</span></div>
+      </div>
+    </div>
+    <a class="news-card__link" aria-label="Abrir noticia La IA ¿futuro o perdición?" href="http://localhost:1313/tres-gatos/posts/ia-futuro-o-perdicion/"></a>
+  </article>
+</section>
+
+<div class="modal-overlay" id="authorModal" hidden>
+  <div class="modal-card">
+    <div class="modal-header">
+      <div class="modal-brand modal-brand--simple">
+        <div>
+          <h2>Autores</h2>
+        </div>
+      </div>
+      <button id="closeAuthorModal" class="modal-close" aria-label="Cerrar autores">×</button>
+    </div>
+    <div class="author-grid"><a class="author-card" href="http://localhost:1313/tres-gatos/autores/deiby/">
+        <div class="author-card__thumb">
+          <img src="/tres-gatos/images/authors/deiby.png" alt="Deiby Rodriguez">
+        </div>
+        <div class="author-card__info">
+          <h3>Deiby Rodriguez</h3><p>Ingeniero de Sistemas</p></div>
+      </a><a class="author-card" href="http://localhost:1313/tres-gatos/autores/santiago/">
+        <div class="author-card__thumb">
+          <img src="/tres-gatos/images/authors/santiago.svg" alt="Santiago Rodriguez">
+        </div>
+        <div class="author-card__info">
+          <h3>Santiago Rodriguez</h3><p>Licenciado en filosofía</p></div>
+      </a></div>
+  </div>
+</div>
+<script defer src="/tres-gatos/js/homepage.js"></script>
+
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/tres-gatos/">Tres Gatos</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
+    <span>&copy; 2026 Tres Gatos · Creado por Deiby Rodriguez</span>
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
@@ -128,12 +169,10 @@
 <script>
     let menu = document.getElementById('menu');
     if (menu) {
-        
         const scrollPosition = localStorage.getItem("menu-scroll-position");
         if (scrollPosition) {
             menu.scrollLeft = parseInt(scrollPosition, 10);
         }
-        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -157,7 +196,6 @@
             }
         });
     });
-
 </script>
 <script>
     var mybutton = document.getElementById("top-link");
@@ -170,7 +208,6 @@
             mybutton.style.opacity = "0";
         }
     };
-
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
@@ -183,7 +220,6 @@
             localStorage.setItem("pref-theme", 'dark');
         }
     })
-
 </script>
 </body>
 

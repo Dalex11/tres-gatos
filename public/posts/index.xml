@@ -6,14 +6,14 @@
     <description>Recent content in Posts on Tres Gatos</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Mon, 16 Mar 2026 17:39:28 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 20:24:52 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tres-gatos/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Primera noticia</title>
-      <link>http://localhost:1313/tres-gatos/posts/prueba/</link>
-      <pubDate>Mon, 16 Mar 2026 17:39:28 -0500</pubDate>
-      <guid>http://localhost:1313/tres-gatos/posts/prueba/</guid>
-      <description>&lt;p&gt;Este es el contenido de la noticia.&lt;/p&gt;</description>
+      <title>La IA ¿futuro o perdición?</title>
+      <link>http://localhost:1313/tres-gatos/posts/ia-futuro-o-perdicion/</link>
+      <pubDate>Mon, 13 Apr 2026 20:24:52 -0500</pubDate>
+      <guid>http://localhost:1313/tres-gatos/posts/ia-futuro-o-perdicion/</guid>
+      <description>Reflexión sobre el impacto social, ambiental y económico de la inteligencia artificial.</description>
     </item>
   </channel>
 </rss>

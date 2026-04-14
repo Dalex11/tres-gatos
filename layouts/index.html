@@ -1,0 +1,106 @@
+{{ define "main" }}
+<link rel="stylesheet" href="{{ "css/homepage.css" | relURL }}">
+<section class="hero-card">
+  <div class="hero-card__row">
+    <div class="hero-card__text">
+      <h1 class="hero-card__title">Tres Gatos</h1>
+      <p class="hero-card__description">No es mucho pero es nuestro.</p>
+    </div>
+    <button id="authorModalButton" class="button button--icon" aria-label="Ver autores">
+      <span>👤</span>
+    </button>
+  </div>
+</section>
+
+<section class="filters-card">
+  <div class="filters-card__header">
+    <h2>Explorar noticias</h2>
+    <button id="sortToggleButton" class="button button--secondary" data-order="desc">Ordenar: más recientes</button>
+  </div>
+  <div class="filters-card__body">
+    <div class="search-shell search-shell--compact">
+      <input id="newsSearch" type="search" placeholder="Buscar título, etiqueta o autor" autocomplete="off">
+    </div>
+  </div>
+</section>
+
+<section class="news-list" id="newsList">
+  {{- $sortedPosts := sort (where .Site.RegularPages "Section" "posts") ".Date" "desc" -}}
+  {{- $paginator := .Paginate $sortedPosts -}}
+  {{- range $paginator.Pages }}
+  {{- $authorPage := .Site.GetPage (printf "/autores/%s" .Params.author) -}}
+  <article class="news-card" data-title="{{ .Title | plainify | lower }}" data-author="{{ with $authorPage }}{{ .Title | plainify | lower }}{{ else }}{{ .Params.author | plainify | lower }}{{ end }}" data-category="{{ with .Params.categories }}{{ delimit . " " | plainify | lower }}{{ end }}" data-tags="{{ with .Params.tags }}{{ delimit . " " | plainify | lower }}{{ end }}" data-date="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{- if .Params.cover.image }}
+    {{- with .Resources.GetMatch .Params.cover.image }}
+    <div class="news-card__image" style="background-image:url('{{ .RelPermalink }}')"></div>
+    {{- end }}
+  {{- end }}
+    <div class="news-card__body">
+      <div class="news-card__meta">
+        {{- with index .Params.categories 0 }}
+        <span class="news-card__tag">{{ . }}</span>
+        {{- end }}
+        <span>{{ .Date.Format "02 Jan 2006" }}</span>
+      </div>
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Summary | plainify | htmlUnescape }}</p>
+      <div class="news-card__footer">
+        <div>
+          <a class="news-card__author" href="{{ with $authorPage }}{{ .Permalink }}{{ else }}#{{ end }}">{{ with $authorPage }}{{ .Title }}{{ else }}{{ .Params.author }}{{ end }}</a>
+        </div>
+        <div class="news-card__tags">
+          {{- range .Params.tags }}<span>{{ . }}</span>{{- end -}}
+        </div>
+      </div>
+    </div>
+    <a class="news-card__link" aria-label="Abrir noticia {{ .Title }}" href="{{ .Permalink }}"></a>
+  </article>
+  {{- end }}
+</section>
+
+{{- if gt $paginator.TotalPages 1 }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- if $paginator.HasPrev }}
+    <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">« Anterior</a>
+    {{- end }}
+    {{- if $paginator.HasNext }}
+    <a class="next" href="{{ $paginator.Next.URL | absURL }}">Siguiente »</a>
+    {{- end }}
+  </nav>
+</footer>
+{{- end }}
+
+<div class="modal-overlay" id="authorModal" hidden>
+  <div class="modal-card">
+    <div class="modal-header">
+      <div class="modal-brand modal-brand--simple">
+        <div>
+          <h2>Autores</h2>
+        </div>
+      </div>
+      <button id="closeAuthorModal" class="modal-close" aria-label="Cerrar autores">×</button>
+    </div>
+    <div class="author-grid">
+      {{- range $author := sort (where .Site.RegularPages "Section" "autores") ".Title" -}}
+      <a class="author-card" href="{{ $author.Permalink }}">
+        <div class="author-card__thumb">
+          {{- if $author.Params.photo }}
+          <img src="{{ $author.Params.photo | relURL }}" alt="{{ $author.Title }}">
+          {{- else }}
+          <span>{{ $author.Title | first 1 }}</span>
+          {{- end }}
+        </div>
+        <div class="author-card__info">
+          <h3>{{ $author.Title }}</h3>
+          {{- if $author.Params.bio -}}
+          <p>{{ $author.Params.bio }}</p>
+          {{- end -}}
+        </div>
+      </a>
+      {{- end -}}
+    </div>
+  </div>
+</div>
+<script defer src="{{ "js/homepage.js" | relURL }}"></script>
+{{ end }}
