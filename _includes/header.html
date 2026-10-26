@@ -1,0 +1,26 @@
+<header class="cabecera" id="cabecera">
+  <div class="cabecera__in">
+    <a class="marca" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}: ir al inicio">
+      <img class="marca__logo" src="{{ '/assets/img/logo/logo-negro.svg' | relative_url }}" alt="" width="200" height="250">
+      <span class="marca__nombre desgaste">Tres Gatos</span>
+    </a>
+
+    <form class="buscador" id="buscador" action="{{ '/buscar/' | relative_url }}" method="get" role="search">
+      <label for="buscador-q" class="vh">Buscar en el blog</label>
+      <input id="buscador-q" name="q" type="search" placeholder="Buscar en el blog…" autocomplete="off"
+             aria-controls="buscador-resultados" aria-autocomplete="list">
+      <button class="buscador__boton" type="submit" aria-label="Buscar">
+        <svg class="ico" aria-hidden="true"><use href="{{ sprite }}#i-buscar"/></svg>
+      </button>
+      <div class="buscador__resultados" id="buscador-resultados" role="listbox" hidden></div>
+    </form>
+
+    <nav class="redes redes--cabecera" aria-label="Redes sociales">
+      {% include redes.html %}
+    </nav>
+
+    <button class="cabecera__lupa" id="abrir-buscador" type="button" aria-label="Abrir buscador" aria-expanded="false" aria-controls="buscador">
+      <svg class="ico" aria-hidden="true"><use href="{{ sprite }}#i-buscar"/></svg>
+    </button>
+  </div>
+</header>

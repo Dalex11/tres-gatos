@@ -1,0 +1,11 @@
+{%- comment -%}
+  Imagen de apoyo dentro de un post. Uso:
+  {% include figura.html src="mi-foto.jpg" alt="Descripción para lectores de pantalla" pie="Texto que va debajo" ancho="completo" %}
+  - src: archivo dentro de assets/img/posts/
+  - pie (opcional): leyenda debajo de la foto
+  - ancho (opcional): "completo" para que ocupe más que el texto
+{%- endcomment -%}
+<figure class="figura{% if include.ancho == 'completo' %} figura--completa{% endif %}">
+  <img src="{{ include.src | prepend: '/assets/img/posts/' | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy">
+  {% if include.pie %}<figcaption>{{ include.pie }}</figcaption>{% endif %}
+</figure>

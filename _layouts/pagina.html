@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="pagina">
+  <header class="pagina__cabeza">
+    <h1 class="titulo-seccion titulo-seccion--grande"><span>{{ page.title }}</span></h1>
+    {% if page.subtitulo %}<p class="pagina__sub">{{ page.subtitulo }}</p>{% endif %}
+  </header>
+  <div class="papel">
+    <div class="prosa prosa--legal">
+{{ content }}
+    </div>
+  </div>
+</article>

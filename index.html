@@ -1,0 +1,81 @@
+---
+layout: default
+clase_body: portada
+---
+{% assign sprite = '/assets/img/iconos.svg' | relative_url %}
+
+<!-- ========== CARRUSEL: los 3 destacados (destacado: 1, 2 y 3 en cada post) ========== -->
+<section class="carrusel" id="carrusel" aria-roledescription="carrusel" aria-label="Posts destacados">
+  <div class="carrusel__pista">
+  {%- assign n = 0 -%}
+  {%- assign mostrados = "|" -%}
+  {%- for orden in (1..3) -%}
+    {%- for p in site.posts -%}
+      {%- if p.destacado == orden and n < 3 -%}
+        {%- assign n = n | plus: 1 -%}
+        {%- assign mostrados = mostrados | append: p.url | append: "|" -%}
+        {% include slide.html %}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- comment -%} Si marcaste menos de 3 destacados, se completan con los más recientes {%- endcomment -%}
+  {%- for p in site.posts -%}
+    {%- assign marca = "|" | append: p.url | append: "|" -%}
+    {%- unless mostrados contains marca -%}
+      {%- if n < 3 -%}
+        {%- assign n = n | plus: 1 -%}
+        {% include slide.html %}
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+  </div>
+
+  <div class="carrusel__controles">
+    <button class="carrusel__flecha" type="button" data-carrusel="anterior" aria-label="Destacado anterior">
+      <svg class="ico" aria-hidden="true"><use href="{{ sprite }}#i-flecha-izq"/></svg>
+    </button>
+    <div class="carrusel__puntos" role="group" aria-label="Elegir destacado">
+      {%- for i in (1..n) -%}
+      <button class="carrusel__punto{% if i == 1 %} activo{% endif %}" type="button" data-ir="{{ i | minus: 1 }}" aria-label="Destacado {{ i }}"{% if i == 1 %} aria-current="true"{% endif %}></button>
+      {%- endfor -%}
+    </div>
+    <button class="carrusel__flecha" type="button" data-carrusel="siguiente" aria-label="Destacado siguiente">
+      <svg class="ico" aria-hidden="true"><use href="{{ sprite }}#i-flecha-der"/></svg>
+    </button>
+    <button class="carrusel__pausa" type="button" data-carrusel="pausa" aria-label="Pausar el carrusel" aria-pressed="false">
+      <span class="carrusel__pausa-ico" aria-hidden="true"></span>
+    </button>
+  </div>
+</section>
+
+<!-- ========== ÚLTIMOS POSTS con filtros tipo alforja ========== -->
+<section class="alforja" id="posts" aria-labelledby="titulo-posts">
+  <h2 class="titulo-seccion" id="titulo-posts"><span>Últimos posts</span></h2>
+
+  <nav class="filtros" id="filtros" aria-label="Filtrar por tema">
+    <div class="filtros__cabeza">
+      <button class="filtros__paso" type="button" data-paso="-1" aria-label="Tema anterior"><span class="tecla">Q</span><svg class="ico solo-tactil" aria-hidden="true"><use href="{{ sprite }}#i-flecha-izq"/></svg></button>
+      <p class="filtros__nombre" id="filtro-nombre" aria-live="polite">Recientes</p>
+      <button class="filtros__paso" type="button" data-paso="1" aria-label="Tema siguiente"><span class="tecla">E</span><svg class="ico solo-tactil" aria-hidden="true"><use href="{{ sprite }}#i-flecha-der"/></svg></button>
+    </div>
+    <ul class="filtros__iconos">
+      <li><button class="filtro activo" type="button" data-tema="" data-nombre="Recientes" aria-pressed="true" title="Recientes">
+        <svg aria-hidden="true"><use href="{{ sprite }}#t-recientes"/></svg><span class="vh">Recientes</span></button></li>
+      {%- for t in site.data.temas %}
+      <li><button class="filtro" type="button" data-tema="{{ t.slug }}" data-nombre="{{ t.nombre }}" aria-pressed="false" title="{{ t.nombre }}">
+        <svg aria-hidden="true"><use href="{{ sprite }}#t-{{ t.icono | default: 'generico' }}"/></svg><span class="vh">{{ t.nombre }}</span></button></li>
+      {%- endfor %}
+    </ul>
+    <p class="filtros__conteo" id="filtro-conteo"></p>
+  </nav>
+
+  <div class="feed" id="feed"></div>
+  <p class="feed__estado" id="feed-estado" aria-live="polite"></p>
+  <div class="feed__centinela" id="feed-centinela" aria-hidden="true"></div>
+
+  <noscript>
+    <ul class="lista-simple">
+      {% for p in site.posts %}<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a> — {{ p.date | date: "%d/%m/%Y" }}</li>{% endfor %}
+    </ul>
+  </noscript>
+</section>

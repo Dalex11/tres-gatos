@@ -1,0 +1,39 @@
+<footer class="pie">
+  <div class="pie__in">
+    <div class="pie__marca">
+      <img src="{{ '/assets/img/logo/logo-blanco.svg' | relative_url }}" alt="" width="200" height="250">
+      <div>
+        <p class="pie__nombre desgaste">Tres Gatos</p>
+        <p class="pie__lema">{{ site.lema }}</p>
+      </div>
+    </div>
+
+    <nav class="pie__col" aria-label="Información legal">
+      <h2 class="pie__titulo">Lo legal</h2>
+      <ul>
+        <li><a href="{{ '/aviso-legal/' | relative_url }}">Aviso legal</a></li>
+        <li><a href="{{ '/privacidad/' | relative_url }}">Política de privacidad</a></li>
+        <li><a href="{{ '/cookies/' | relative_url }}">Política de cookies</a></li>
+      </ul>
+    </nav>
+
+    <div class="pie__col">
+      <h2 class="pie__titulo">Contacto</h2>
+      <ul>
+        <li><a href="mailto:{{ site.correo }}"><svg class="ico" aria-hidden="true"><use href="{{ sprite }}#i-correo"/></svg> {{ site.correo }}</a></li>
+        <li><a href="{{ '/contacto/' | relative_url }}">Datos de contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="pie__col">
+      <h2 class="pie__titulo">Síguenos</h2>
+      <nav class="redes redes--pie" aria-label="Redes sociales">{% include redes.html %}</nav>
+      <ul>
+        <li><a href="{{ '/feed.xml' | relative_url }}"><svg class="ico" aria-hidden="true"><use href="{{ sprite }}#r-rss"/></svg> Suscribirse por RSS</a></li>
+        <li><button class="pie__instalar" id="instalar-app" type="button" hidden><svg class="ico" aria-hidden="true"><use href="{{ sprite }}#i-instalar"/></svg> Instalar la app</button></li>
+      </ul>
+      <p class="pie__ios" id="ayuda-ios" hidden>En iPhone: toca <strong>Compartir</strong> y luego <strong>Agregar a inicio</strong> para llevar Tres Gatos contigo.</p>
+    </div>
+  </div>
+  <p class="pie__copy">© {{ site.time | date: '%Y' }} {{ site.title }}. Todos los derechos reservados. Los textos e imágenes propios no pueden reproducirse sin autorización; puedes citarlos brevemente enlazando la fuente.</p>
+</footer>

@@ -1,0 +1,46 @@
+# ============================================================
+#  TEMAS (filtros de la portada)
+#  - El orden de esta lista es el orden de los iconos en la barra.
+#  - "slug": identificador sin tildes ni espacios. Es lo que pones
+#    en los posts:  temas: [politica, economia]
+#  - "icono": el nombre del dibujo en assets/img/iconos.svg
+#    (id="t-NOMBRE"). Si creas un tema nuevo y aún no tiene
+#    dibujo propio, usa  icono: generico  (estrella de alguacil).
+#  "Recientes" no va aquí: es el filtro que muestra todo.
+# ============================================================
+
+- slug: politica
+  nombre: Política
+  icono: politica
+
+- slug: economia
+  nombre: Economía
+  icono: economia
+
+- slug: ciencia
+  nombre: Ciencia
+  icono: ciencia
+
+- slug: tecnologia
+  nombre: Tecnología
+  icono: tecnologia
+
+- slug: pedagogia
+  nombre: Pedagogía
+  icono: pedagogia
+
+- slug: social
+  nombre: Social
+  icono: social
+
+- slug: filosofia
+  nombre: Filosofía
+  icono: filosofia
+
+- slug: literatura
+  nombre: Literatura
+  icono: literatura
+
+- slug: cultura
+  nombre: Cultura
+  icono: cultura

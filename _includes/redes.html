@@ -1,0 +1,7 @@
+{%- for red in site.redes -%}
+  {%- if red.url and red.url != "" -%}
+<a class="red" href="{{ red.url }}" target="_blank" rel="noopener me" aria-label="{{ red.nombre }}" title="{{ red.nombre }}"><svg class="ico" aria-hidden="true"><use href="{{ sprite }}#r-{{ red.icono }}"/></svg></a>
+  {%- else -%}
+<span class="red red--pronto" role="img" aria-label="{{ red.nombre }} (próximamente)" title="{{ red.nombre }}: próximamente"><svg class="ico" aria-hidden="true"><use href="{{ sprite }}#r-{{ red.icono }}"/></svg></span>
+  {%- endif -%}
+{%- endfor -%}

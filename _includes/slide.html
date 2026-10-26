@@ -1,0 +1,17 @@
+<article class="slide{% if n == 1 %} activo{% endif %}" data-indice="{{ n | minus: 1 }}" aria-roledescription="diapositiva" aria-label="{{ n }} de 3: {{ p.title | escape }}"{% if n != 1 %} aria-hidden="true"{% endif %}>
+  <a class="slide__foto" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ p.imagen | prepend: '/assets/img/posts/' | relative_url }}" alt="" width="1400" height="875"{% if n == 1 %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+  </a>
+  <div class="slide__panel">
+    <p class="slide__etiqueta">Destacado</p>
+    <ul class="temas-mini" aria-label="Temas">
+      {%- for t in site.data.temas -%}{%- if p.temas contains t.slug -%}
+      <li><svg aria-hidden="true"><use href="{{ sprite }}#t-{{ t.icono | default: 'generico' }}"/></svg>{{ t.nombre }}</li>
+      {%- endif -%}{%- endfor -%}
+    </ul>
+    <h3 class="slide__titulo"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p class="slide__resumen">{{ p.resumen }}</p>
+    <p class="slide__meta"><time class="fecha-rel" datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%d/%m/%Y" }}</time></p>
+  </div>
+  <a class="slide__leer" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">Leer <span class="tecla">↵</span></a>
+</article>

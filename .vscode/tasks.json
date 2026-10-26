@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Instalar dependencias",
+      "type": "shell",
+      "command": "bundle install",
+      "problemMatcher": []
+    },
+    {
+      "label": "Servir blog (localhost:4000)",
+      "type": "shell",
+      "command": "bundle exec jekyll serve --livereload --host 0.0.0.0",
+      "isBackground": true,
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Servir con borradores y posts futuros",
+      "type": "shell",
+      "command": "bundle exec jekyll serve --livereload --drafts --future",
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}

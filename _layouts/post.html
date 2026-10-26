@@ -1,0 +1,80 @@
+---
+layout: default
+---
+{% assign sprite = '/assets/img/iconos.svg' | relative_url %}
+{% assign palabras = content | strip_html | number_of_words %}
+{% assign minutos = palabras | plus: 100 | divided_by: 200 %}
+{% if minutos < 1 %}{% assign minutos = 1 %}{% endif %}
+<div class="progreso" aria-hidden="true"><span id="progreso-barra"></span></div>
+
+<article class="articulo" id="articulo" data-url="{{ page.url | remove_first: '/' }}" data-temas="{{ page.temas | join: ',' }}">
+  <div class="articulo__barra">
+    <a class="volver" id="volver" href="{{ '/' | relative_url }}#posts">
+      <svg class="ico" aria-hidden="true"><use href="{{ sprite }}#i-volver"/></svg> Volver <span class="tecla tecla--texto">Esc</span>
+    </a>
+  </div>
+
+  <header class="articulo__cabeza">
+    <figure class="articulo__portada">
+      <img class="foto-revela" src="{{ page.imagen | prepend: '/assets/img/posts/' | relative_url }}" alt="{{ page.imagen_alt | default: '' | escape }}" width="1400" height="875" fetchpriority="high">
+      {% if page.imagen_credito %}<figcaption class="articulo__credito">{{ page.imagen_credito }}</figcaption>{% endif %}
+    </figure>
+
+    <div class="articulo__titular">
+      <h1 class="articulo__titulo">{{ page.title }}</h1>
+    </div>
+
+    <div class="articulo__datos">
+      <ul class="temas-chips" aria-label="Temas">
+        {%- for t in site.data.temas -%}{%- if page.temas contains t.slug -%}
+        <li><a href="{{ '/' | relative_url }}?tema={{ t.slug }}#posts"><svg aria-hidden="true"><use href="{{ sprite }}#t-{{ t.icono | default: 'generico' }}"/></svg>{{ t.nombre }}</a></li>
+        {%- endif -%}{%- endfor -%}
+      </ul>
+      <p class="articulo__meta">
+        <time class="fecha-rel" data-larga="1" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>
+        <span aria-hidden="true">·</span>
+        <span><svg class="ico" aria-hidden="true"><use href="{{ sprite }}#i-reloj"/></svg> {{ minutos }} min de lectura</span>
+      </p>
+      <div class="acciones">
+        {% include like.html %}
+        {% include compartir.html %}
+      </div>
+    </div>
+  </header>
+
+  <div class="papel">
+    <div class="prosa">
+{{ content }}
+    </div>
+
+    <section class="fuentes" aria-labelledby="titulo-fuentes">
+      <h2 id="titulo-fuentes">Fuentes</h2>
+      {% if page.fuentes and page.fuentes.size > 0 %}
+      <ol>
+        {%- for f in page.fuentes -%}
+        <li>
+          {%- if f.titulo -%}
+            {%- if f.url -%}<a href="{{ f.url }}" target="_blank" rel="noopener">{{ f.titulo }}</a>{%- else -%}{{ f.titulo }}{%- endif -%}
+            {%- if f.medio %}. <span class="fuentes__medio">{{ f.medio }}</span>{% endif -%}
+            {%- if f.fecha %}, {{ f.fecha }}{% endif -%}.
+          {%- else -%}{{ f }}{%- endif -%}
+        </li>
+        {%- endfor -%}
+      </ol>
+      {% else %}
+      <p class="fuentes__vacio">Texto de opinión: no cita fuentes externas.</p>
+      {% endif %}
+    </section>
+
+    <div class="acciones acciones--final">
+      <p>¿Te sirvió? Pásalo a alguien más.</p>
+      {% include like.html %}
+      {% include compartir.html %}
+    </div>
+  </div>
+
+  <section class="relacionados" id="relacionados-bloque" hidden aria-labelledby="titulo-relacionados">
+    <h2 class="titulo-seccion" id="titulo-relacionados"><span>También en la alforja</span></h2>
+    <div class="feed feed--relacionados" id="relacionados"></div>
+  </section>
+</article>

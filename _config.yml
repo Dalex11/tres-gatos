@@ -1,0 +1,73 @@
+# ============================================================
+#  TRES GATOS · configuración del sitio
+#  Después de cambiar este archivo, GitHub vuelve a publicar
+#  el sitio solo (tarda 1–2 minutos).
+# ============================================================
+
+title: "Tres Gatos"
+description: "Política, economía, ciencia y cultura contadas sin prisa y sin firma."
+lema: "No es mucho, pero es nuestro."
+lang: es-CO
+timezone: America/Bogota
+
+# --- Dirección del sitio --------------------------------------
+# Repositorio llamado  TU-USUARIO.github.io  →  url: "https://TU-USUARIO.github.io"  y  baseurl: ""
+# Repositorio con otro nombre (ej. tres-gatos) →  baseurl: "/tres-gatos"
+# Cuando compres el dominio propio: url: "https://tresgatos.com" y baseurl: ""
+url: "https://Dalex11.github.io"
+baseurl: "/tres-gatos"
+
+# --- Contacto y responsable (aparece en los textos legales) ---
+correo: "contacto.tres.gatos@gmail.com"
+responsable: "Deiby Rodríguez"
+pais: "Colombia"
+fecha_legal: "23 de octubre de 2026"   # última actualización de los textos legales
+
+# --- Redes sociales -------------------------------------------
+# Deja la url vacía ("") mientras la cuenta no exista:
+# el icono se ve atenuado con el aviso "Próximamente".
+redes:
+  - nombre: Facebook
+    icono: facebook
+    url: ""
+  - nombre: Instagram
+    icono: instagram
+    url: ""
+  - nombre: TikTok
+    icono: tiktok
+    url: ""
+  - nombre: X
+    icono: x
+    url: ""
+  - nombre: Threads
+    icono: threads
+    url: ""
+
+# --- Portada --------------------------------------------------
+posts_por_carga: 6        # cuántas tarjetas aparecen cada vez que bajas en el scroll
+segundos_carrusel: 5
+
+# --- Lo técnico (normalmente no hace falta tocar) -------------
+permalink: /posts/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+feed:
+  path: feed.xml
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "paginas" }
+    values: { layout: pagina }
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _plantillas
+  - vendor
+  - node_modules

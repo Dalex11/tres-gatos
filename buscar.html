@@ -1,0 +1,17 @@
+---
+layout: default
+title: Buscar
+permalink: /buscar/
+sin_indexar: true
+---
+{% assign sprite = '/assets/img/iconos.svg' | relative_url %}
+<section class="busqueda">
+  <h1 class="titulo-seccion titulo-seccion--grande"><span>Buscar</span></h1>
+  <form class="busqueda__form" id="busqueda-form" action="{{ '/buscar/' | relative_url }}" role="search">
+    <label for="busqueda-q" class="vh">¿Qué buscas?</label>
+    <input id="busqueda-q" name="q" type="search" placeholder="Escribe una palabra, un tema, una idea…" autocomplete="off">
+    <button class="boton boton--rojo" type="submit"><svg class="ico" aria-hidden="true"><use href="{{ sprite }}#i-buscar"/></svg> Buscar</button>
+  </form>
+  <p class="busqueda__resumen" id="busqueda-resumen" aria-live="polite"></p>
+  <div class="feed" id="busqueda-resultados"></div>
+</section>

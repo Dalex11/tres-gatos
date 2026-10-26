@@ -1,0 +1,9 @@
+---
+layout: null
+permalink: /posts.json
+---
+[
+{%- for p in site.posts -%}
+{"url":{{ p.url | remove_first: "/" | jsonify }},"titulo":{{ p.title | jsonify }},"fecha":"{{ p.date | date_to_xmlschema }}","temas":{{ p.temas | default: "" | jsonify }},"imagen":{{ p.imagen | prepend: "assets/img/posts/" | jsonify }},"alt":{{ p.imagen_alt | default: p.title | jsonify }},"resumen":{{ p.resumen | jsonify }},"destacado":{{ p.destacado | default: 0 }},"texto":{{ p.content | strip_html | normalize_whitespace | truncate: 8000 | jsonify }}}{% unless forloop.last %},{% endunless %}
+{% endfor -%}
+]

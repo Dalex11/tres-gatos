@@ -1,0 +1,5 @@
+<button class="like like--grande" type="button" data-like="{{ page.url | remove_first: '/' }}" aria-pressed="false" aria-label="Me gusta">
+  <svg class="like__vacio" aria-hidden="true"><use href="{{ sprite }}#i-corazon"/></svg>
+  <svg class="like__lleno" aria-hidden="true"><use href="{{ sprite }}#i-corazon-lleno"/></svg>
+  <span class="like__texto">Me gusta</span>
+</button>

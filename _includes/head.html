@@ -1,0 +1,56 @@
+{%- if page.title and page.layout != 'home' -%}
+  {%- assign titulo_pagina = page.title | append: ' · ' | append: site.title -%}
+{%- else -%}
+  {%- assign titulo_pagina = site.title | append: ' — ' | append: site.lema -%}
+{%- endif -%}
+{%- assign desc = page.resumen | default: page.description | default: site.description | strip_html | strip_newlines -%}
+{%- if page.imagen -%}
+  {%- assign og_img = page.imagen | prepend: '/assets/img/posts/' | absolute_url -%}
+{%- else -%}
+  {%- assign og_img = '/assets/img/og-tres-gatos.jpg' | absolute_url -%}
+{%- endif -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ titulo_pagina }}</title>
+<meta name="description" content="{{ desc | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta name="theme-color" content="#c5170e">
+<meta name="color-scheme" content="dark">
+{% if page.sin_indexar %}<meta name="robots" content="noindex">{% endif %}
+
+<!-- Vista previa al compartir (WhatsApp, Facebook, X, Threads...) -->
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="es_CO">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+<meta property="og:description" content="{{ desc | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ og_img }}">
+<meta property="og:image:alt" content="{{ page.imagen_alt | default: site.title | escape }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | default: site.title | escape }}">
+<meta name="twitter:description" content="{{ desc | escape }}">
+<meta name="twitter:image" content="{{ og_img }}">
+{% if page.layout == 'post' %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ desc | jsonify }},"image":{{ og_img | jsonify }},"datePublished":"{{ page.date | date_to_xmlschema }}","mainEntityOfPage":{{ page.url | absolute_url | jsonify }},"author":{"@type":"Organization","name":{{ site.title | jsonify }}},"publisher":{"@type":"Organization","name":{{ site.title | jsonify }},"logo":{"@type":"ImageObject","url":{{ '/assets/img/pwa/icono-512.png' | absolute_url | jsonify }}}},"inLanguage":"es-CO"}</script>
+{% endif %}
+
+<!-- App instalable (PWA) e iconos -->
+<link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/assets/img/pwa/favicon-32.png' | relative_url }}" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{{ '/assets/img/pwa/apple-touch-icon.png' | relative_url }}">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+<link rel="preload" href="{{ '/assets/fonts/staatliches.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/crimson-pro-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/estilos.css' | relative_url }}">
+
+<!-- Datos para el JavaScript del sitio -->
+<meta name="tg-base" content="{{ '/' | relative_url }}">
+<meta name="tg-carga" content="{{ site.posts_por_carga | default: 6 }}">
+<meta name="tg-carrusel" content="{{ site.segundos_carrusel | default: 5 }}">
+{% if site.vista_previa %}<meta name="tg-vista-previa" content="1">{% endif %}

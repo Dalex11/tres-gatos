@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es">
+<head>
+{% include head.html %}
+</head>
+{% assign sprite = '/assets/img/iconos.svg' | relative_url %}
+<body class="{{ page.clase_body | default: 'interior' }}">
+  <a class="saltar" href="#principal">Saltar al contenido</a>
+  {% include header.html %}
+  <main id="principal" tabindex="-1">
+{{ content }}
+  </main>
+  {% include footer.html %}
+  {% include cookies.html %}
+  <script id="datos-temas" type="application/json">{{ site.data.temas | jsonify }}</script>
+  <script src="{{ '/assets/js/app.js' | relative_url }}" defer></script>
+</body>
+</html>
