@@ -14,8 +14,8 @@ timezone: America/Bogota
 # Repositorio llamado  TU-USUARIO.github.io  →  url: "https://TU-USUARIO.github.io"  y  baseurl: ""
 # Repositorio con otro nombre (ej. tres-gatos) →  baseurl: "/tres-gatos"
 # Cuando compres el dominio propio: url: "https://tresgatos.com" y baseurl: ""
-url: "https://Dalex11.github.io"
-baseurl: "/tres-gatos"
+url: "https://tres-gatos.com"
+baseurl: ""
 
 # --- Contacto y responsable (aparece en los textos legales) ---
 correo: "contacto.tres.gatos@gmail.com"
