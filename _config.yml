@@ -5,15 +5,14 @@
 # ============================================================
 
 title: "Tres Gatos"
-description: "Política, economía, ciencia y cultura contadas sin prisa y sin firma."
+description: "Blog de divulgación académica."
 lema: "No es mucho, pero es nuestro."
 lang: es-CO
 timezone: America/Bogota
 
 # --- Dirección del sitio --------------------------------------
-# Repositorio llamado  TU-USUARIO.github.io  →  url: "https://TU-USUARIO.github.io"  y  baseurl: ""
-# Repositorio con otro nombre (ej. tres-gatos) →  baseurl: "/tres-gatos"
-# Cuando compres el dominio propio: url: "https://tresgatos.com" y baseurl: ""
+# El sitio usa el dominio propio (archivo CNAME), así que baseurl va vacío.
+# No cambies estas dos líneas o el sitio se verá sin estilos ni imágenes.
 url: "https://tres-gatos.com"
 baseurl: ""
 
@@ -29,19 +28,22 @@ fecha_legal: "23 de octubre de 2026"   # última actualización de los textos le
 redes:
   - nombre: Facebook
     icono: facebook
-    url: ""
+    url: "https://www.facebook.com/share/1GrE8Tq2NX/"
   - nombre: Instagram
     icono: instagram
-    url: ""
+    url: "https://www.instagram.com/blog.tresgatos/"
   - nombre: TikTok
     icono: tiktok
-    url: ""
+    url: "https://www.tiktok.com/@blog.tresgatos"
   - nombre: X
     icono: x
-    url: ""
+    url: "https://x.com/blogtresgatos"
   - nombre: Threads
     icono: threads
-    url: ""
+    url: "https://www.threads.com/@blog.tresgatos"
+  - nombre: YouTube
+    icono: youtube
+    url: "https://www.youtube.com/channel/UCjwkeMWNzhZOFfcJbm_0PYw"
 
 # --- Portada --------------------------------------------------
 posts_por_carga: 6        # cuántas tarjetas aparecen cada vez que bajas en el scroll

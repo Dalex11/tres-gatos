@@ -5,6 +5,8 @@ clase_body: portada
 {% assign sprite = '/assets/img/iconos.svg' | relative_url %}
 
 <!-- ========== CARRUSEL: los 3 destacados (destacado: 1, 2 y 3 en cada post) ========== -->
+{%- comment -%} Mientras no haya ningún post, el carrusel no se muestra {%- endcomment -%}
+{%- if site.posts.size > 0 %}
 <section class="carrusel" id="carrusel" aria-roledescription="carrusel" aria-label="Posts destacados">
   <div class="carrusel__pista">
   {%- assign n = 0 -%}
@@ -47,6 +49,7 @@ clase_body: portada
     </button>
   </div>
 </section>
+{%- endif %}
 
 <!-- ========== ÚLTIMOS POSTS con filtros tipo alforja ========== -->
 <section class="alforja" id="posts" aria-labelledby="titulo-posts">
