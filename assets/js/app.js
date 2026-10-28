@@ -625,6 +625,17 @@
     if (ios && $('#ayuda-ios')) $('#ayuda-ios').hidden = false;
   }
 
+  /* ------------------------------------------- botones "copiar" (página RSS) */
+  function botonesCopiar() {
+    $$('[data-copiar]').forEach((b) => {
+      b.addEventListener('click', () => {
+        const texto = b.dataset.copiar;
+        if (navigator.clipboard) navigator.clipboard.writeText(texto).then(() => tostada('Dirección copiada')).catch(() => prompt('Copia la dirección:', texto));
+        else prompt('Copia la dirección:', texto);
+      });
+    });
+  }
+
   /* -------------------------------------------------------------- arranque */
   function iniciar() {
     pintarFechas();
@@ -638,6 +649,7 @@
     paginaBusqueda();
     post();
     pwa();
+    botonesCopiar();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar);
   else iniciar();

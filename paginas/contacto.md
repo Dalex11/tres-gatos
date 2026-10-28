@@ -21,7 +21,11 @@ Solemos responder en pocos días. Usaremos tu correo solo para contestarte (más
 
 ## Redes sociales
 
-Pronto estaremos en Facebook, Instagram, TikTok, X y Threads. Los enlaces aparecerán aquí y en el pie de cada página.
+También puedes seguirnos y escribirnos en:
+
+{% for red in site.redes %}{% if red.url and red.url != "" %}
+- [{{ red.nombre }}]({{ red.url }}){:target="_blank" rel="noopener"}
+{%- endif %}{% endfor %}
 
 ## Datos del responsable
 

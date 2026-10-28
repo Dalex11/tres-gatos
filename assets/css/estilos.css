@@ -969,6 +969,13 @@ a.red:hover { color: var(--hueso); transform: translateY(-2px); }
 .prosa--legal h2 { font-size: 1.7rem; }
 .correo-grande { font: clamp(1.4rem, 4vw, 2rem)/1.2 var(--f-titulo); letter-spacing: .03em; overflow-wrap: anywhere; }
 
+/* Página RSS */
+.rss-direccion { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin: 0 0 1.4rem; }
+.rss-direccion .correo-grande { margin: 0; font-size: clamp(1.05rem, 3vw, 1.4rem); }
+.rss-direccion code { font: inherit; background: none; padding: 0; }
+.rss-lista time { color: var(--gris); font-size: .9em; white-space: nowrap; }
+.rss-lista time::before { content: "· "; }
+
 .busqueda { text-align: center; }
 .busqueda__form { display: flex; gap: 10px; max-width: 640px; margin: 0 auto 1rem; }
 .busqueda__form input {

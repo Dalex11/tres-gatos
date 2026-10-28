@@ -330,6 +330,9 @@ Están en `_config.yml`, en la sección `redes`. Cada red tiene su enlace en `ur
 ### Correo y responsable
 En `_config.yml`: `correo`, `responsable`, `pais` y `fecha_legal`. Salen en el pie de página y en los textos legales.
 
+### Página de RSS
+El enlace "Suscribirse por RSS" del pie lleva a `tres-gatos.com/rss/`, una página que explica qué es RSS, tiene un botón para copiar la dirección del feed y lista las últimas 10 noticias. El texto está en `paginas/rss.md`. El feed en sí (`/feed.xml`) lo generan las noticias solas; no hay que tocarlo.
+
 ### Páginas legales y de contacto
 Están en la carpeta `paginas/`: `aviso-legal.md`, `privacidad.md`, `cookies.md` y `contacto.md`. Se editan como una noticia: datos arriba y texto abajo. Son borradores pensados para Colombia (Ley 1581 de 2012), y conviene que un abogado les dé una revisión. Si las cambias, actualiza también `fecha_legal` en `_config.yml`.
 
@@ -377,7 +380,7 @@ _posts/              ✏️  Las noticias (un archivo .md por noticia)
 assets/img/posts/    ✏️  Las fotos de las noticias
 _config.yml          ✏️  Nombre, lema, correo, redes, opciones de la portada
 _data/temas.yml      ✏️  Lista de temas
-paginas/             ✏️  Aviso legal, privacidad, cookies, contacto
+paginas/             ✏️  Aviso legal, privacidad, cookies, contacto, RSS
 _plantillas/         📋  Plantilla para copiar al crear una noticia
 _includes/footer.html  ✏️  Solo el texto del © (ver sección 10)
 
