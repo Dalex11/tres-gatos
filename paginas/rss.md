@@ -38,5 +38,5 @@ Muchos lectores también encuentran el feed solos si escribes simplemente **{{ s
   {%- endfor %}
 </ul>
 {% else %}
-Todavía no hemos publicado nada. Si te suscribes ahora, la primera noticia te llegará apenas salga.
+Suscríbete ahora para ser el primero en recibir las noticias apenas salgan.
 {% endif %}
