@@ -920,6 +920,21 @@ a.red:hover { color: var(--hueso); transform: translateY(-2px); }
 .prosa blockquote p { margin: 0 0 .5em; }
 .prosa blockquote p:last-child { margin: 0; }
 .prosa ul, .prosa ol { padding-left: 1.3em; }
+
+/* Epígrafe: la cita que va antes del texto (dato "epigrafe" del post) */
+.epigrafe { margin: 0 0 2.4rem auto; max-width: 30rem; padding: 0 0 0 1.2em; border-left: 4px solid var(--rojo); font-size: 1.22rem; font-style: italic; line-height: 1.5; color: #2b2520; }
+.epigrafe p { margin: 0; }
+.epigrafe footer { margin-top: .7em; font: .95rem var(--f-titulo); font-style: normal; letter-spacing: .08em; color: var(--gris-osc); }
+.epigrafe footer::before { content: "— "; }
+
+/* Notas al pie ([^1] en el texto) */
+.prosa sup { line-height: 0; }
+.prosa .footnote { font: 700 .75em var(--f-texto); text-decoration: none; padding: 0 .1em; }
+.prosa .footnotes { margin-top: 2.4em; padding-top: 1em; border-top: 1px solid rgba(27, 24, 21, .3); font-size: 1.04rem; line-height: 1.5; color: #3a332c; }
+.prosa .footnotes ol { margin: 0; }
+.prosa .footnotes li::marker { font-family: var(--f-titulo); color: var(--rojo); }
+.prosa .footnotes p { margin: 0; }
+.prosa .reversefootnote { text-decoration: none; margin-left: .3em; }
 .prosa li { margin-bottom: .35em; }
 .prosa ul li::marker { color: var(--rojo); }
 .prosa hr {

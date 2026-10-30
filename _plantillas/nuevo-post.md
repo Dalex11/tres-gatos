@@ -13,6 +13,9 @@ title: "Título del post"
 # Si pones una fecha futura, el post no aparecerá hasta ese día.
 date: 2026-11-02 08:00:00 -0500
 
+# Autor (opcional): sale junto a la fecha como "Por ...". Bórralo para no firmar.
+autor: "Nombre del autor"
+
 # Uno o varios temas (los slugs de _data/temas.yml), separados por comas
 temas: [politica, social]
 
@@ -28,8 +31,18 @@ resumen: "Una o dos frases que inviten a leer."
 # Para cambiar los destacados, quita el número del post viejo y ponlo en el nuevo.
 # destacado: 1
 
+# Epígrafe (opcional): una cita o unos versos que salen antes del texto.
+# Cada línea debe empezar con 2 espacios. Bórralo si no hay cita.
+epigrafe: |
+  Primera línea de la cita,
+  segunda línea.
+epigrafe_autor: "Autor, «Obra»"
+
 # Fuentes: SIEMPRE salen al final del post, en este orden.
-# medio, fecha y url son opcionales.
+# Opción A (recomendada si ya tienes la referencia en APA): una línea por fuente,
+# entre comillas. *cursiva* y <https://enlace> funcionan.
+#   - "Apellido, N. (2026). Título. *Medio*. <https://...>"
+# Opción B: por partes (medio, fecha y url son opcionales).
 fuentes:
   - titulo: "Nombre del documento o artículo"
     medio: "Quién lo publicó"
@@ -52,8 +65,12 @@ Para **negrita** usa dos asteriscos y para *cursiva* uno.
 
 > Una cita destacada se escribe empezando la línea con el signo >
 
+Una nota al pie se marca así[^1] y su texto se escribe al final del post.
+
 - Una lista
 - con viñetas
 
 1. Una lista
 2. numerada
+
+[^1]: Este es el texto de la nota al pie. Sale al final del artículo, antes de las fuentes.

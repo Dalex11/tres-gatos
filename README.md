@@ -146,14 +146,34 @@ Qué significa cada dato:
 | Dato | Para qué sirve | ¿Obligatorio? |
 |---|---|---|
 | `title` | El título de la noticia. | Sí |
+| `autor` | Quién la escribió. Sale junto a la fecha como "Por …". Si la borras, la noticia sale sin firma. | No |
 | `date` | Fecha y hora de publicación en hora de Colombia. Respeta el formato: `AÑO-MES-DÍA HORA:MIN:SEG -0500`. | Sí |
 | `temas` | Uno o varios temas entre corchetes y separados por comas. Los temas que existen están en la [sección 9](#9-temas-los-filtros-de-la-portada). | Sí |
 | `imagen` | El nombre **exacto** de la foto principal que pusiste en `assets/img/posts`. | Sí |
 | `imagen_alt` | Una descripción de la foto para personas ciegas que usan lectores de pantalla. | Sí |
 | `imagen_credito` | El autor de la foto. Sale pequeño debajo de la portada. | No |
 | `resumen` | Una o dos frases que invitan a leer. Salen en la tarjeta de la portada, en el carrusel y cuando alguien comparte el enlace. **No salen dentro de la noticia.** | Sí |
+| `epigrafe` y `epigrafe_autor` | Una cita o unos versos que salen antes del texto, con su autor (ver el ejemplo abajo). | No |
 | `destacado` | `1`, `2` o `3` para ponerla en el carrusel de la portada (ver [sección 7](#7-el-orden-de-las-noticias-y-el-carrusel)). Si no la quieres destacar, borra la línea. | No |
-| `fuentes` | Lista de fuentes. Salen al final de la noticia en el mismo orden. `medio`, `fecha` y `url` son opcionales. Si borras todas, sale "Texto de opinión: no cita fuentes externas". | No |
+| `fuentes` | Lista de fuentes o referencias. Salen al final de la noticia en el mismo orden. Si borras todas, sale "Texto de opinión: no cita fuentes externas". | No |
+
+#### Epígrafe (cita antes del texto)
+Cada línea del poema o de la cita va en su propio renglón y empieza con **2 espacios**:
+```yaml
+epigrafe: |
+  Esta es la boca que hubo,
+  esto los besos.
+epigrafe_autor: "María Mercedes Carranza, «Tierralta»"
+```
+
+#### Referencias en formato APA
+Si ya tienes las referencias escritas, ponlas cada una entre comillas en una línea que empieza con `  - `. Dentro puedes usar `*cursiva*` y poner los enlaces entre `<` y `>` para que se puedan abrir:
+```yaml
+fuentes:
+  - "Roberts, M. E. (2014). *Fear, friction, and flooding* [Tesis doctoral, Harvard University]."
+  - "EFE. (1981, 27 de marzo). El escritor García Márquez abandona Colombia. *El País*. <https://elpais.com/...>"
+```
+La forma por partes (`titulo`, `medio`, `fecha`, `url`) del ejemplo de arriba también sigue funcionando.
 
 #### ⚠️ Reglas de oro para los datos
 Casi todos los errores vienen de aquí:
@@ -187,6 +207,7 @@ El texto se escribe en un formato llamado **Markdown**: es texto normal con algu
 | Una cita destacada | `> El texto de la cita` al inicio de la línea | Un bloque de cita |
 | Una lista con viñetas | Líneas que empiezan con `- ` | • elemento |
 | Una lista numerada | Líneas que empiezan con `1. `, `2. ` … | 1. elemento |
+| Una nota al pie | `texto[^1]` donde va el número y, al final del texto, una línea `[^1]: Texto de la nota.` | Un ¹ pequeño que lleva a la nota, al final del artículo |
 | Una línea separadora | `---` sola en una línea, con una línea en blanco antes | Una raya horizontal |
 
 **Detalles:**

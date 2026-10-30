@@ -31,6 +31,10 @@ layout: default
         {%- endif -%}{%- endfor -%}
       </ul>
       <p class="articulo__meta">
+        {%- if page.autor %}
+        <span class="articulo__autor">Por {{ page.autor }}</span>
+        <span aria-hidden="true">·</span>
+        {%- endif %}
         <time class="fecha-rel" data-larga="1" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>
         <span aria-hidden="true">·</span>
         <span><svg class="ico" aria-hidden="true"><use href="{{ sprite }}#i-reloj"/></svg> {{ minutos }} min de lectura</span>
@@ -43,6 +47,14 @@ layout: default
   </header>
 
   <div class="papel">
+    {%- if page.epigrafe %}
+    <blockquote class="epigrafe">
+      <p>{{ page.epigrafe | strip | newline_to_br }}</p>
+      {%- if page.epigrafe_autor %}
+      <footer>{{ page.epigrafe_autor }}</footer>
+      {%- endif %}
+    </blockquote>
+    {%- endif %}
     <div class="prosa">
 {{ content }}
     </div>
@@ -57,7 +69,7 @@ layout: default
             {%- if f.url -%}<a href="{{ f.url }}" target="_blank" rel="noopener">{{ f.titulo }}</a>{%- else -%}{{ f.titulo }}{%- endif -%}
             {%- if f.medio %}. <span class="fuentes__medio">{{ f.medio }}</span>{% endif -%}
             {%- if f.fecha %}, {{ f.fecha }}{% endif -%}.
-          {%- else -%}{{ f }}{%- endif -%}
+          {%- else -%}{{ f | markdownify | remove: '<p>' | remove: '</p>' | strip }}{%- endif -%}
         </li>
         {%- endfor -%}
       </ol>
