@@ -1,6 +1,6 @@
 ---
 title: "¿De qué hablamos cuando hablamos de censura?"
-date: 2026-11-03 00:00:00 -0500
+date: 2026-11-03 11:38:00 -0500
 autor: "Lic. Santiago Arturo Rodríguez Bustos"
 temas: [politica, cultura]
 
