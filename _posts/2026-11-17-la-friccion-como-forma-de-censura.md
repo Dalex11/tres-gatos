@@ -1,6 +1,6 @@
 ---
 title: "La fricción como forma de censura"
-date: 2026-11-17 18:00:00 -0500
+date: 2026-11-17 14:00:00 -0500
 autor: "Lic. Santiago Arturo Rodríguez Bustos"
 temas: [politica, cultura]
 
