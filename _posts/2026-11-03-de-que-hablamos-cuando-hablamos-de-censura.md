@@ -9,7 +9,7 @@ imagen_alt: "Pared gris de una sala de museo con algunas vitrinas, un retrato y 
 imagen_credito: "Foto: imagen difundida en medios, autor no identificado"
 
 resumen: "Qué es la censura y cómo opera a través del miedo: del retiro de piezas del Museo Nacional al genocidio de la Unión Patriótica."
-destacado: 2
+destacado: 3
 
 epigrafe: |
   Esta es la boca que hubo,

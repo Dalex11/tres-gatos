@@ -9,7 +9,7 @@ imagen_alt: "Paisaje de montañas y bosque al atardecer, atravesado por cables d
 imagen_credito: "Foto: Deiby Alexander Rodriguez Rodallega"
 
 resumen: "Qué es la brecha digital, por qué el campo colombiano sigue desconectado y cómo eso pesa en la educación, la participación ciudadana y la economía."
-destacado: 1
+destacado: 2
 
 epigrafe: |
   Dos cuerpos frente a frente
